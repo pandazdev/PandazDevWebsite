@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandaz Portfolio</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: sans-serif, fira-mono;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            background-color: #555;
+        }
+        nav a:hover {
+            background-color: #777;
+        }
+        .project-title{
+            margin-bottom: 5%;
+            text-align: center;
+            font-size: 500%;
+            color:rgb(0, 0, 0);
+            text-wrap:balance;
+            width: 100%;
+        }
+        .project {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-family: 'Fira Mono', monospace;
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        } 
+        .icon {
+            width: 200px; /* Set your desired width */
+            height: 200px; /* Set your desired height */
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This will crop the image */
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .description {
+            
+            font-size: x-large;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .icon .text-overlay {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .icon:hover .text-overlay {
+            opacity: 1;
+        }
+        .backbutton {
+            font-family: 'Fira Mono', monospace;
+            font-size: 600%;
+            font-weight:bold;
+            text-decoration: none;
+            color: #000000;
+            background-color: #ffffff;
+            -webkit-text-stroke-width: 5px;
+            -webkit-text-stroke-color: rgb(255, 255, 255);
+            cursor:pointer;
+            text-align: center;
+            width: 150px;
+            padding: 0px;
+            height: 150px;
+        }
+        .backbutton:hover {
+            font-weight:bolder;
+            color: #ffffff;
+            -webkit-text-stroke-width: 5px;
+            -webkit-text-stroke-color: black;
+       
+        }
+        .selected {
+            color: #00d9ff;
+            font-weight: bolder;
+           }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pandaz Website</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="" class="selected">Work</a>
+            <a href="../contact/index.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div class="icon">
+            <a href="#" onclick="loadProject('carphysics')">
+                <img src="../CarDurby/Icon.png" alt="CarPhysics">
+                <div class="text-overlay">Car Physics</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('animationcreator')">
+                <img src="../AnimationCreator/Icon.png" alt="AnimationCreator">
+                <div class="text-overlay">Animation Creator</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('theexperiment')">
+                <img src="../TheExperiment/Icon.png" alt="TheExperiment">
+                <div class="text-overlay">The Experiment</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('projectzomboidinspiredcamera')">
+                <img src="../ProjectZomboidInspiredCamera/Icon.png" alt="ProjectZomboidInspiredCamera">
+                <div class="text-overlay">Project Zomboid Inspired Camera</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('cartmechanics')">
+                <img src="../CartMechanics/Icon.png" alt="CartMechanics">
+                <div class="text-overlay">Cart Mechanics</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('throwingmechanics')">
+                <img src="../ThrowingMechanics/Icon.png" alt="ThrowingMechanics">
+                <div class="text-overlay">Throwing Mechanics</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('terraingenerator')">
+                <img src="../TerrainGenerator/Icon.png" alt="TerrainGenerator">
+                <div class="text-overlay">Terrain Generator</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('virusinjector')">
+                <img src="../VirusInjector/Icon.png" alt="VirusInjector">
+                <div class="text-overlay">Virus Injector</div>
+            </a>
+        </div>
+        <!-- Add more icons as needed -->
+    </div>
+    <div class="container" id="projectDetails">
+        <!-- Project details will be loaded here -->
+    </div>
+    <script>
+        function loadProject(projectId) {
+            // Define your projects in an object
+            const projects = {
+                carphysics: {
+                    name: "Car Physics",
+                    video: "",
+                    description: "I created a physics engine for a game called Car Durby. It is meant to be a little unrealistic as the game is about epic Derby fights in cars. I made it so when you go backwards you are more powerful and if your car is flipped, you get flung easily.",
+                    gamelink: "https://www.roblox.com/games/4662389151/Car-Durby"
+                },
+                animationcreator: {
+                    name: "Animation Creator",
+                    video: "/AnimationCreator/Videonew.mp4", 
+                    description: "I created a Animation Creator. You don't many games where you just create a animation. I even made it so you have a feature called \"onion skin\". This allows you to see 1 frame back so you can create better animations. Give it a try!",
+                    gamelink: "https://www.roblox.com/games/12858952434/Animation-Creator",
+                },
+                theexperiment:{
+                    name: "The Experiment",
+                    video: "/TheExperiment/Videonew.mp4",
+                    description: "This is a unfinished Horror game that I created. This shows how I can create lobbies and efficiently make questions on the computer, with my code it is really easy to add questions. Give it a play!",
+                    gamelink: "https://www.roblox.com/games/15530793478/The-Experiment"
+                },
+                projectzomboidinspiredcamera:{
+                    name: "Project Zomboid Inspired Camera",
+                    video: "/ProjectZomboidInspiredCamera/Videonew.mp4",
+                    description: "I did this camera mechanic as a commission and it shows how I can work with client side inputs and how I can use math to make the camera move according to the mouse's starting location (gets the location when they first right clicked).",
+                    gamelink: "https://www.roblox.com/games/12868083226/Funn-Pandazs-Place-Number-26"
+                },
+                cartmechanics:{
+                    name: "Cart Mechanics",
+                    video: "/CartMechanics/Videonew.mp4",
+                    description: "I created cart mechanics. I made it so that the carts will slide while not being held if you give them a push. Once you click E on the cart you are now pushing the cart. You can press E to toggle and Q to let go. When you press toggle, it does my (poorly) made animation, but makes it you can drive the cart! Letting go will push it forward.",
+                    gamelink: "https://www.roblox.com/games/14569320955/Cart-Game"
+                },
+                throwingmechanics:{
+                    name: "Throwing Mechanics",
+                    video: "/ThrowingMechanics/Videonew.mp4",
+                    description: "I made Bomb Throwing Mechanics, I did this for a commission, this was to show where the bomb would go if you threw it. I made it so you had to hold to gain the power to throw it where you want it to go. ",
+                    gamelink: "https://www.roblox.com/games/15562591533/Throw-Bombs-at-Killer"
+                },
+                terraingenerator:{
+                    name: "Terrain Generator",
+                    video: "/TerrainGenerator/Videonew.mp4",
+                    description: "I made a Terrain Generator game. This is to show I can use Perlin Noise to generate terrain. The Terrain only generates if you are holding the generator tool.",
+                    gamelink: "https://www.roblox.com/games/13473691299/terrain-generator"
+                },
+                virusinjector:{
+                    name: "Virus Injector",
+                    video: "/VirusInjector/Videonew.mp4",
+                    description: "I created a Injector along with viruses. The injector holds 3 viruses, I used metatables to efficently create injectors for each person. You fill your injector in the first room then you make a new bot and stab it with a virus to see what viruses you got! *This game is in the making*",
+                    gamelink: "https://www.roblox.com/games/16960447305/Virus-Injector-Test"
+                // Add more projects as needed
+                }
+            };
+
+            // Get the container element
+            const container = document.getElementById('projectDetails');
+
+            // Get the project details based on projectId
+            const project = projects[projectId];
+
+            // Generate HTML for the project
+            const html = `
+                <a href="" class="backbutton" >\<\-</a>
+                <div class="project">
+                    <div class="project-title">${project.name}</div>
+                    
+                    <video controls autoplay class="video">
+                        <source src="../${project.video}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <div class="description">${project.description}</div>
+                    <a href="${project.gamelink}" target="_blank" class="button">Play The Game!</a>
+                </div>
+            `;
+            
+             document.getElementsByClassName('container')[0].remove();
+             container.innerHTML = html; // Set the HTML of the container
+             console.log(project.video)
+             if (project.video === "") {
+                
+                document.getElementsByClassName('video')[0].remove();
+            }
+        }
+    </script>
+
+</body>
+</html>
