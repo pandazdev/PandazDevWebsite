@@ -75,7 +75,7 @@ p {
 /* Your existing CSS styles */
 
 .testimonial-container {
-
+    padding-top: 40px;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
