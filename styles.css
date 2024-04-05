@@ -75,19 +75,19 @@ p {
 /* Your existing CSS styles */
 
 .testimonial-container {
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
     width: device-width;
     display: flex;
-    height: 1vh;
+    
     flex-wrap: nowrap;
     left: 50%;
 }
 
 .testimonial {
-    height: 12vh;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -98,8 +98,8 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-wrap: balance;
-    width: device-width;
+    text-wrap:pretty;
+    width: 50%;
 }
 
 .testimonial img {

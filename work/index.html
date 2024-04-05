@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="../icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pandaz Portfolio</title>
+    <title>PandazDev Portfolio</title>
     <style>
         /* Add your CSS styles here */
         body {
@@ -218,43 +219,43 @@
                 },
                 animationcreator: {
                     name: "Animation Creator",
-                    video: "/AnimationCreator.mp4", 
+                    video: "GmITVHVatZU", 
                     description: "I created a Animation Creator. You don't many games where you just create a animation. I even made it so you have a feature called \"onion skin\". This allows you to see 1 frame back so you can create better animations. Give it a try!",
                     gamelink: "https://www.roblox.com/games/12858952434/Animation-Creator",
                 },
                 theexperiment:{
                     name: "The Experiment",
-                    video: "/TheExperiment.mp4",
+                    video: "6aXXMmd-_h8",
                     description: "This is a unfinished Horror game that I created. This shows how I can create lobbies and efficiently make questions on the computer, with my code it is really easy to add questions. Give it a play!",
                     gamelink: "https://www.roblox.com/games/15530793478/The-Experiment"
                 },
                 projectzomboidinspiredcamera:{
                     name: "Project Zomboid Inspired Camera",
-                    video: "/ProjectZomboidInspiredCamera.mp4",
+                    video: "Z9pzoo2Dn0k",
                     description: "I did this camera mechanic as a commission and it shows how I can work with client side inputs and how I can use math to make the camera move according to the mouse's starting location (gets the location when they first right clicked).",
                     gamelink: "https://www.roblox.com/games/12868083226/Funn-Pandazs-Place-Number-26"
                 },
                 cartmechanics:{
                     name: "Cart Mechanics",
-                    video: "/CartMechanics.mp4",
+                    video: "6yguX-5GwD0",
                     description: "I created cart mechanics. I made it so that the carts will slide while not being held if you give them a push. Once you click E on the cart you are now pushing the cart. You can press E to toggle and Q to let go. When you press toggle, it does my (poorly) made animation, but makes it you can drive the cart! Letting go will push it forward.",
                     gamelink: "https://www.roblox.com/games/14569320955/Cart-Game"
                 },
                 throwingmechanics:{
                     name: "Throwing Mechanics",
-                    video: "/ThrowingMechanics.mp4",
+                    video: "8Tlq8gi7C_0",
                     description: "I made Bomb Throwing Mechanics, I did this for a commission, this was to show where the bomb would go if you threw it. I made it so you had to hold to gain the power to throw it where you want it to go. ",
                     gamelink: "https://www.roblox.com/games/15562591533/Throw-Bombs-at-Killer"
                 },
                 terraingenerator:{
                     name: "Terrain Generator",
-                    video: "/TerrainGenerator.mp4",
+                    video: "ln3ZLEXNHso",
                     description: "I made a Terrain Generator game. This is to show I can use Perlin Noise to generate terrain. The Terrain only generates if you are holding the generator tool.",
                     gamelink: "https://www.roblox.com/games/13473691299/terrain-generator"
                 },
                 virusinjector:{
                     name: "Virus Injector",
-                    video: "/VirusInjector.mp4",
+                    video: "07lLYX6Id4M",
                     description: "I created a Injector along with viruses. The injector holds 3 viruses, I used metatables to efficently create injectors for each person. You fill your injector in the first room then you make a new bot and stab it with a virus to see what viruses you got! *This game is in the making*",
                     gamelink: "https://www.roblox.com/games/16960447305/Virus-Injector-Test"
                 // Add more projects as needed
@@ -272,12 +273,11 @@
                 <a href="" class="backbutton" >\<\-</a>
                 <div class="project">
                     <div class="project-title">${project.name}</div>
-                    
-                    <video controls autoplay class="video">
-                        <source src="https://github.com/pandazdev/PandazDevWebsiteVideos/raw/main${project.video}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    
+               
+                    <iframe class="iframe" width="750" height="415"
+                    src="https://www.youtube.com/embed/${project.video}?autoplay=1&mute=1">
+                    </iframe>
+
                     <div class="description">${project.description}</div>
                     <a href="${project.gamelink}" target="_blank" class="button">Play The Game!</a>
                 </div>
@@ -288,7 +288,7 @@
              console.log(project.video)
              if (project.video === "") {
                 
-                document.getElementsByClassName('video')[0].remove();
+                document.getElementsByClassName('iframe')[0].remove();
             }
         }
     </script>
