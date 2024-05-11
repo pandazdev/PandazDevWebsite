@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../icon.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PandazDev Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: sans-serif, fira-mono;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            background-color: #555;
+        }
+        nav a:hover {
+            background-color: #777;
+        }
+        .project-title{
+            margin-bottom: 5%;
+            text-align: center;
+            font-size: 500%;
+            color:rgb(0, 0, 0);
+            text-wrap:balance;
+            width: 90%;
+        }
+        .project {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .containerr {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-family: 'Fira Mono', monospace;
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        } 
+        .icon {
+            width: 200px; /* Set your desired width */
+            height: 200px; /* Set your desired height */
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This will crop the image */
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .description {
+            
+            font-size: x-large;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .descriptiont {
+            
+            font-size: large;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .icon .text-overlay {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .icon:hover .text-overlay {
+            opacity: 1;
+        }
+        .backbutton {
+            font-family: 'Fira Mono', monospace;
+            font-size: 600%;
+            font-weight:bold;
+            text-decoration: none;
+            color: #000000;
+            background-color: #ffffff;
+            -webkit-text-stroke-width: 5px;
+            -webkit-text-stroke-color: rgb(255, 255, 255);
+            cursor:pointer;
+            text-align: center;
+            width: 150px;
+            padding: 0px;
+            height: 150px;
+        }
+        .backbutton:hover {
+            font-weight:bolder;
+            color: #ffffff;
+            -webkit-text-stroke-width: 5px;
+            -webkit-text-stroke-color: black;
+       
+        }
+        .selected {
+            color: #00d9ff;
+            font-weight: bolder;
+           }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Pandaz Portifolio</h1>
+        <nav>
+            <a href="" class="selected"  >Your Custom Page</a>
+            <a href="../index.html">Home</a>
+            <a href="../work/index.html">Work</a>
+            <a href="../contact/index.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="title">What's up!</div>
+        <h2 class="subtitle">I'm PandazDev.</h2>
+        <p>I'm a dedicated Roblox Developer with a passion for scripting and game development. What started as a hobby
+            in 2020 quickly evolved into a serious pursuit by 2021. Over the years, I've sharpened my skills, diving
+            deeper into Lua to create fun experiences and work within the Roblox platform. I am also really good at
+            DEBUGGING!! I like to do front end mostly, but I am still really good at back end. I can also make websites!
+        </p>
+        <p style="font-size:medium;">What I use:</p>
+        <p style="font-size:medium;">- Rojo</p>
+        <p style="font-size:medium;">- GitHub</p>
+        <p style="font-size:medium;">- Visual Studio Code</p>
+        <p style="font-size:medium;">- Roblox Studio</p>
+        <p class="question">Don't take it from me, take it from some of my clients.</p>
+    </div>
+
+    <div class="testimonial-container">
+        <div class="testimonial" style="align-items: center;">
+            <p>"Hard worker. Willing to work many hours in a row to complete and given task. Highly reccomend."</p>
+            <a href="https://www.roblox.com/users/782578068" style="color: black; cursor:pointer; text-decoration:none">
+                <p>- killerdolophin2000</p>
+            </a>
+        </div>
+        <div class="testimonial" tyle="align-items: center;">
+            <p>"A great coder for my projects 🙏 worth the payment"</p>
+            <a href="https://www.roblox.com/users/45746331/profile"
+                style="color: black; cursor:pointer; text-decoration:none">
+                <p>- vertexprimus</p>
+            </a>
+        </div>
+
+        <!-- Add more testimonials as needed -->
+    </div>
+
+    <div class="containerr" id="projectDetails"></div>
+
+    <script>
+ function loadProject(projectId, id) {
+            // Define your projects in an object
+            const projects = {
+                1: {
+                    name: "Car Physics",
+                    video: "",
+                    description: "I created a physics engine for a game called Car Durby. It is meant to be a little unrealistic as the game is about epic Derby fights in cars. I made it so when you go backwards you are more powerful and if your car is flipped, you get flung easily.",
+                    gamelink: "https://www.roblox.com/games/4662389151/Car-Durby"
+                },
+                2: {
+                    name: "Animation Creator",
+                    video: "GmITVHVatZU", 
+                    description: "I created a Animation Creator. You don't many games where you just create a animation. I even made it so you have a feature called \"onion skin\". This allows you to see 1 frame back so you can create better animations. Give it a try!",
+                    gamelink: "https://www.roblox.com/games/12858952434/Animation-Creator",
+                },
+                3:{
+                    name: "The Experiment",
+                    video: "6aXXMmd-_h8",
+                    description: "This is a unfinished Horror game that I created. This shows how I can create lobbies and efficiently make questions on the computer, with my code it is really easy to add questions. Give it a play!",
+                    gamelink: "https://www.roblox.com/games/15530793478/The-Experiment"
+                },
+                4:{
+                    name: "Project Zomboid Inspired Camera",
+                    video: "Z9pzoo2Dn0k",
+                    description: "I did this camera mechanic as a commission and it shows how I can work with client side inputs and how I can use math to make the camera move according to the mouse's starting location (gets the location when they first right clicked).",
+                    gamelink: "https://www.roblox.com/games/12868083226/Funn-Pandazs-Place-Number-26"
+                },
+                5:{
+                    name: "Cart Mechanics",
+                    video: "6yguX-5GwD0",
+                    description: "I created cart mechanics. I made it so that the carts will slide while not being held if you give them a push. Once you click E on the cart you are now pushing the cart. You can press E to toggle and Q to let go. When you press toggle, it does my (poorly) made animation, but makes it you can drive the cart! Letting go will push it forward.",
+                    gamelink: "https://www.roblox.com/games/14569320955/Cart-Game"
+                },
+                6:{
+                    name: "Throwing Mechanics",
+                    video: "8Tlq8gi7C_0",
+                    description: "I made Bomb Throwing Mechanics, I did this for a commission, this was to show where the bomb would go if you threw it. I made it so you had to hold to gain the power to throw it where you want it to go. ",
+                    gamelink: "https://www.roblox.com/games/15562591533/Throw-Bombs-at-Killer"
+                },
+                7:{
+                    name: "Terrain Generator",
+                    video: "ln3ZLEXNHso",
+                    description: "I made a Terrain Generator game. This is to show I can use Perlin Noise to generate terrain. The Terrain only generates if you are holding the generator tool.",
+                    gamelink: "https://www.roblox.com/games/13473691299/terrain-generator"
+                },
+                8:{
+                    name: "Virus Injector",
+                    video: "07lLYX6Id4M",
+                    description: "I created a Injector along with viruses. The injector holds 3 viruses, I used metatables to efficently create injectors for each person. You fill your injector in the first room then you make a new bot and stab it with a virus to see what viruses you got! *This game is in the making*",
+                    gamelink: "https://www.roblox.com/games/16960447305/Virus-Injector-Test"
+                // Add more projects as needed
+                }
+            };
+            
+            const idd = {
+                0: {}, // no
+                1: {show:true, desc:"this game also kills me"}, // 1 turn off game desc 2 desc
+                2: {show:false, desc:"edfghdkjfhksdjhf"}
+            }
+
+            // Get the container element
+            const container = document.getElementById('projectDetails');
+
+            // Get the project details based on projectId
+            const idv = idd[id]
+            const project = projects[projectId];
+            project.description2 = ""
+            if (idv.desc != null) {
+                if (idv.show === false) {
+                    project.description = ""
+                }
+                project.description2 = idv.desc
+            }
+
+            // Generate HTML for the project
+            const html = `
+            
+                <div class="project">
+                    <div style="font-size: larger; text-wrap:pretty;" > ------------------------------------------------------------------------------------------------------------------------------------- </div>
+                    <div class="project-title" >${project.name}</div>
+               
+                    <iframe class="iframe" width="90%" height="415"
+                    src="https://www.youtube.com/embed/${project.video}?autoplay=1&mute=1">
+                    </iframe>
+                    
+                    <div class="description">${project.description}</div>
+                    <div class="descriptiont"><b>${project.description2}</b></div>
+                    <a href="${project.gamelink}" target="_blank" class="button">Play The Game!</a>
+                </div>
+            `;
+            console.log(container.innerHTML)
+            // document.getElementsByClassName('container')[0].remove();
+            if (container.innerHTML != null) {
+               container.innerHTML = container.innerHTML + html; 
+            }else
+            {
+                container.innerHTML =html;
+            }
+              // Set the HTML of the container
+             console.log(project.video)
+             if (project.video === "") {
+                document.getElementsByClassName('iframe')[0].remove();
+            }
+        }
+
+
+        const urlParams = new URL(window.location.toLocaleString()).searchParams;
+        const number = urlParams.get('id');
+        console.log(number);
+        const idd = urlParams.get('idd');
+        console.log(idd);
+        if (number != null && idd != null) {
+
+            for (let i = 0; i < number.length; i++) {
+                console.log(number[i])
+                console.log(idd[i])
+                if (idd[i] === 0 || idd[i] === null) {
+                    loadProject(number[i], 0)
+
+                }else{
+                    loadProject(number[i],idd[i] )
+                }
+                
+            }
+
+        }
+
+    </script>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
