@@ -11,6 +11,7 @@
             font-family: sans-serif, fira-mono;
             margin: 0;
             padding: 0;
+            background-color: #000000;
         }
         header {
             background-color: #333;
@@ -38,7 +39,7 @@
             margin-bottom: 5%;
             text-align: center;
             font-size: 500%;
-            color:rgb(0, 0, 0);
+            color: #fff;
             text-wrap:balance;
             width: 100%;
         }
@@ -72,9 +73,9 @@
             background-color: #0056b3;
         } 
         .icon {
-            width: 200px; /* Set your desired width */
-            height: 200px; /* Set your desired height */
-            margin: 20px;
+            width: 400px; /* Set your desired width */
+            height: 400px; /* Set your desired height */
+            margin: 10px;
             position: relative;
             overflow: hidden;
             border-radius: 10px;
@@ -92,7 +93,7 @@
             border-radius: 10px;
         }
         .description {
-            
+            color: #fff;
             font-size: x-large;
             margin-bottom: 20px;
             margin-top: 20px;
@@ -119,10 +120,10 @@
             font-size: 600%;
             font-weight:bold;
             text-decoration: none;
-            color: #000000;
-            background-color: #ffffff;
+            color: #ffffff;
+            background-color: #000000;
             -webkit-text-stroke-width: 5px;
-            -webkit-text-stroke-color: rgb(255, 255, 255);
+            -webkit-text-stroke-color: rgb(0, 0, 0);
             cursor:pointer;
             text-align: center;
             width: 150px;
@@ -133,7 +134,7 @@
             font-weight:bolder;
             color: #ffffff;
             -webkit-text-stroke-width: 5px;
-            -webkit-text-stroke-color: black;
+            -webkit-text-stroke-color: rgb(255, 255, 255);
        
         }
         .selected {
@@ -202,6 +203,24 @@
                 <div class="text-overlay">Virus Injector</div>
             </a>
         </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('camerasystem')">
+                <img src="../CameraSystem/icon.png" alt="Camera System">
+                <div class="text-overlay">Advanced Camera System</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('advancedNPC')">
+                <img src="../AdvancedNPC/icon.png" alt="Advanced Camera System">
+                <div class="text-overlay">Advanced Camera System</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('simplesim')">
+                <img src="../SimpleSim/Icon.png" alt="SimpleSim">
+                <div class="text-overlay">Simple Simulator</div>
+            </a>
+        </div>
         <!-- Add more icons as needed -->
     </div>
     <div class="container" id="projectDetails">
@@ -216,6 +235,21 @@
                     video: "",
                     description: "I created a physics engine for a game called Car Durby. It is meant to be a little unrealistic as the game is about epic Derby fights in cars. I made it so when you go backwards you are more powerful and if your car is flipped, you get flung easily.",
                     gamelink: "https://www.roblox.com/games/4662389151/Car-Durby"
+                },
+                simplesim : {
+                    name: "Simple Simulator",
+                    video: "_h7-xZFT__A",
+                    description: "This shows I can create simple simulators purchases, rebirth systems, and leaderstats. Pretty simple stuff."
+                },
+                advancedNPC: {
+                    name: "Advanced NPC",
+                    video : "CrhDs3YvMqs",
+                    description: "This is a advanced NPC system where it is kinda stupid. The NPC tries to get you but if you hide behind stuff or jump over it, it gets confused. This NPC has goldfish memory."
+                },
+                camerasystem: {
+                    name: "Advanced Camera System",
+                    video: "OIOTzPw67uw",
+                    description: "I created a advanced camera system! You can record zoom in/out and you can make it into a disc. Once it is inserted into the TV, it plays the video! I've created the camera so you can play it on a bad device and wont have lag!"
                 },
                 animationcreator: {
                     name: "Animation Creator",

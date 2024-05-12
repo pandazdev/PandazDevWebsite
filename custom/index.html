@@ -13,6 +13,7 @@
             font-family: sans-serif, fira-mono;
             margin: 0;
             padding: 0;
+            background-color: #000000;
         }
         header {
             background-color: #333;
@@ -40,7 +41,7 @@
             margin-bottom: 5%;
             text-align: center;
             font-size: 500%;
-            color:rgb(0, 0, 0);
+            color:rgb(255,255,255);
             text-wrap:balance;
             width: 90%;
         }
@@ -49,6 +50,7 @@
             margin: 20px auto;
             padding: 0 20px;
             text-align: center;
+            color: #fff;
         }
         .containerr {
             max-width: 1200px;
@@ -57,6 +59,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            color: #fff;
         }
         .button {
             display: inline-block;
@@ -95,13 +98,13 @@
         }
         .description {
             
-            font-size: x-large;
+            font-size:medium;
             margin-bottom: 20px;
             margin-top: 20px;
         }
         .descriptiont {
             
-            font-size: large;
+            font-size: x-large;
             margin-bottom: 20px;
             margin-top: 20px;
         }
@@ -181,23 +184,36 @@
     <div class="testimonial-container">
         <div class="testimonial" style="align-items: center;">
             <p>"Hard worker. Willing to work many hours in a row to complete and given task. Highly reccomend."</p>
-            <a href="https://www.roblox.com/users/782578068" style="color: black; cursor:pointer; text-decoration:none">
+            <a href="https://www.roblox.com/users/782578068" style="color: black; cursor:pointer; text-decoration:underline">
                 <p>- killerdolophin2000</p>
+            </a>
+        </div>
+        <div class="testimonial" style="align-items: center;">
+            <p>"HOLY I JUST TESTED THATS CRAZY GOOD WOAHHHH NICE BRO"</p>
+            <a href="https://www.roblox.com/users/360260054/profile" style="color: black; cursor:pointer; text-decoration:underline">
+                <p>- vinx</p>
             </a>
         </div>
         <div class="testimonial" tyle="align-items: center;">
             <p>"A great coder for my projects 🙏 worth the payment"</p>
             <a href="https://www.roblox.com/users/45746331/profile"
-                style="color: black; cursor:pointer; text-decoration:none">
+                style="color: black; cursor:pointer; text-decoration:underline">
                 <p>- vertexprimus</p>
             </a>
         </div>
-
+        <div class="testimonial" style="align-items: center;">
+            <p>"you've been good to work with and have been really talented🙏"</p>
+            <a href="https://www.roblox.com/users/360260054/profile" style="color: black; cursor:pointer; text-decoration:underline">
+                <p>- vinx</p>
+            </a>
+        </div>
         <!-- Add more testimonials as needed -->
     </div>
 
     <div class="containerr" id="projectDetails"></div>
-
+    <div class="project"><div style="font-size: larger; text-wrap:pretty;" > ------------------------------------------------------------------------------------------------------------------------------------- </div>
+    <a href="../work/index.html" target="_blank" class="button">More Work!</a></div>
+    
     <script>
  function loadProject(projectId, id) {
             // Define your projects in an object
@@ -251,11 +267,13 @@
                     gamelink: "https://www.roblox.com/games/16960447305/Virus-Injector-Test"
                 // Add more projects as needed
                 }
+
+                
             };
             
             const idd = {
                 0: {}, // no
-                1: {show:true, desc:"this game also kills me"}, // 1 turn off game desc 2 desc
+                1: {show:true, desc:"This game shows how I can mange and create good quality camera systems!"}, // 1 turn off game desc 2 desc
                 2: {show:false, desc:"edfghdkjfhksdjhf"}
             }
 
@@ -267,10 +285,11 @@
             const project = projects[projectId];
             project.description2 = ""
             if (idv.desc != null) {
+                project.description2 = idv.desc
                 if (idv.show === false) {
                     project.description = ""
                 }
-                project.description2 = idv.desc
+                
             }
 
             // Generate HTML for the project
@@ -283,9 +302,9 @@
                     <iframe class="iframe" width="90%" height="415"
                     src="https://www.youtube.com/embed/${project.video}?autoplay=1&mute=1">
                     </iframe>
-                    
-                    <div class="description">${project.description}</div>
                     <div class="descriptiont"><b>${project.description2}</b></div>
+                    <div class="description">${project.description}</div>
+                    
                     <a href="${project.gamelink}" target="_blank" class="button">Play The Game!</a>
                 </div>
             `;
@@ -295,7 +314,7 @@
                container.innerHTML = container.innerHTML + html; 
             }else
             {
-                container.innerHTML =html;
+                container.innerHTML = html;
             }
               // Set the HTML of the container
              console.log(project.video)
@@ -303,19 +322,18 @@
                 document.getElementsByClassName('iframe')[0].remove();
             }
         }
-
-
         const urlParams = new URL(window.location.toLocaleString()).searchParams;
+        const name = urlParams.get("n")
+        if (name != null) {
+            const c = document.getElementsByClassName("title")
+            c.innerHTML = `What's up ${n}!` 
+        }
         const number = urlParams.get('id');
-        console.log(number);
         const idd = urlParams.get('idd');
-        console.log(idd);
-        if (number != null && idd != null) {
+        if (number != null) {
 
             for (let i = 0; i < number.length; i++) {
-                console.log(number[i])
-                console.log(idd[i])
-                if (idd[i] === 0 || idd[i] === null) {
+                if (idd === null || idd[i] === 0 || idd[i] === null) {
                     loadProject(number[i], 0)
 
                 }else{
