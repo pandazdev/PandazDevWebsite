@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Profile Picture</title>
+</head>
+<body>
+    <h1>Roblox Profile Picture</h1>
+    <img id="profile-picture" alt="Roblox Profile Picture">
+
+    <script>
+        const userId = '1933939860'; // Replace with the actual user ID
+        const imageSize = '420x420'; // You can change the size if needed
+
+        fetch(`https://thumbnails.roproxy.com/v1/users/avatar?userIds=${userId}&size=${imageSize}&format=Png&isCircular=false`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.data && data.data.length > 0) {
+                    const profilePictureUrl = data.data[0].imageUrl;
+                    document.getElementById('profile-picture').src = profilePictureUrl;
+                } else {
+                    console.error('No data found for the given user ID');
+                }
+            })
+            .catch(error => console.error('Error fetching profile picture:', error));
+    </script>
+</body>
+</html>
