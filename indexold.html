@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pandaz Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Roblox Profile Picture</title>
 </head>
 <body>
-    <header>
-        <h1>Pandaz Website</h1>
-        <nav>
-            <a href="" class="selected">Home</a>
-            <a href="./work/index.html">Work</a>
-            <a href="./contact/index.html">Contact</a>
-        </nav>
-    </header>
+    <h1>Roblox Profile Picture</h1>
+    <img id="profile-picture" alt="Roblox Profile Picture">
 
-    <div class="container">
-        <div class="title">What's up!</div>
-        <h2 class="subtitle">I'm Panda.</h2>
-        <p>I'm a dedicated Roblox Developer with a passion for scripting and game development. What started as a hobby in 2020 quickly evolved into a serious pursuit by 2021. Over the years, I've sharpened my skills, diving deeper into Lua to create fun experiences and work within the Roblox platform.</p>
-    </div>
+    <script>
+        const userId = '1933939860'; // Replace with the actual user ID
+        const imageSize = '420x420'; // You can change the size if needed
 
-
-        <!-- Add more testimonials as needed -->
-    </div>
+        fetch(`https://thumbnails.roproxy.com/v1/users/avatar?userIds=${userId}&size=${imageSize}&format=Png&isCircular=false`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.data && data.data.length > 0) {
+                    const profilePictureUrl = data.data[0].imageUrl;
+                    document.getElementById('profile-picture').src = profilePictureUrl;
+                } else {
+                    console.error('No data found for the given user ID');
+                }
+            })
+            .catch(error => console.error('Error fetching profile picture:', error));
+    </script>
 </body>
 </html>

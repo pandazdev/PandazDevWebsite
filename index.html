@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="icon" href="../icon.jpg">
+    <link rel="icon" href="icon.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PandazDev Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-color: #000000;">
+
+<body style="background-color: #000000; size: 0%;">
     <header>
         <h1>Pandaz Portifolio</h1>
         <nav>
@@ -19,46 +21,310 @@
 
     <div class="container">
         <div class="title">What's up!</div>
-        <h2 class="subtitle">I'm PandazDev.</h2>
-        <p>I'm a dedicated Roblox Developer with a passion for scripting and game development. What started as a hobby in 2020 quickly evolved into a serious pursuit by 2021. Over the years, I've sharpened my skills, diving deeper into Lua to create fun experiences and work within the Roblox platform. I am also really good at DEBUGGING!! I like to do front end mostly, but I am still really good at back end. I can also make websites!</p>
-        <p style="font-size:medium;">What I use:</p>
-        <p style="font-size:medium;">-Rojo</p>
-        <p style="font-size:medium;">- GitHub</p>
-        <p style="font-size:medium;">-Visual Studio Code</p>
-        <p style="font-size:medium;">-Roblox Studio</p>
-        <p style="font-size:medium;">-My brain</p>
-        <p class="question">Don't take it from me, take it from some of my clients.</p>
+        <p style="font-weight: 10000; text-align: center; font-size: xx-large;">
+            I'm PandazDev.
+            <img id="profile-picture" alt="" style="height: 10%;">
+        </p>
+
+        <script>
+            const userId = '1933939860'; // Replace with the actual user ID
+            const imageSize = '150x150'; // You can change the size if needed
+            const imageType = 'HeadShot'; // Options: 'HeadShot', 'Bust', 'FullBody'
+
+            fetch(`https://thumbnails.roproxy.com/v1/users/avatar?userIds=${userId}&size=${imageSize}&format=Png&isCircular=false`)
+                .then(response => response.json())
+                .then(data => {
+                    const profilePictureUrl = data.data[0].imageUrl;
+                    document.getElementById('profile-picture').src = profilePictureUrl;
+                })
+                .catch(error => console.error('Error fetching profile picture:', error));
+        </script>
+
+        <p style="font-size:x-large; text-align: center; font-weight: bold;">I'm a dedicated Roblox Developer with a
+            passion for scripting and game development. What started as a hobby in 2020 quickly evolved into a serious
+            pursuit by 2021. Over the years, I've sharpened my skills, diving deeper into Lua to create fun experiences
+            and work within the Roblox platform. I am also really good at DEBUGGING!! I like to do front end mostly, but
+            I am still really good at back end. I can also make websites!</p>
+        <!-- <p style="font-size:medium; margin: 0%; font-weight: bolder;">What I use:</p>
+        <p style="font-size:medium; margin: 0%; font-weight:100;">-Rojo</p>
+        <p style="font-size:medium; margin: 0%; font-weight:100;">-GitHub</p>
+        <p style="font-size:medium; margin: 0%; font-weight:100;">-Visual Studio Code</p>
+        <p style="font-size:medium; margin: 0%; font-weight:100;">-Roblox Studio</p> -->
+        <p class="question">Don't take it from me, take it from some of my partners.</p>
+
+        <div class="testimonial-container">
+            <div class="testimonial" style="align-items: center;">
+                <p>"Hard worker. Willing to work many hours in a row to complete and given task. Highly reccomend."</p>
+                <a href="https://www.roblox.com/users/782578068"
+                    style="color: black; cursor:pointer; text-decoration:underline">
+                    <p>- killerdolophin2000</p>
+                </a>
+            </div>
+            <div class="testimonial" style="align-items: center;">
+                <p>"HOLY I JUST TESTED THATS CRAZY GOOD WOAHHHH NICE BRO"</p>
+                <a href="https://www.roblox.com/users/360260054/profile"
+                    style="color: black; cursor:pointer; text-decoration:underline">
+                    <p>- vinx</p>
+                </a>
+            </div>
+            <div class="testimonial" tyle="align-items: center;">
+                <p>"A great coder for my projects 🙏 worth the payment"</p>
+                <a href="https://www.roblox.com/users/45746331/profile"
+                    style="color: black; cursor:pointer; text-decoration:underline">
+                    <p>- vertexprimus</p>
+                </a>
+            </div>
+            <div class="testimonial" style="align-items: center;">
+                <p>"you've been good to work with and have been really talented🙏"</p>
+                <a href="https://www.roblox.com/users/360260054/profile"
+                    style="color: black; cursor:pointer; text-decoration:underline">
+                    <p>- vinx</p>
+                </a>
+            </div>
+
+            <div class="testimonial" style="align-items: center;">
+                <p>"Hard worker, able to get things done on time. Very good at what he does."</p>
+                <a href="https://www.roblox.com/users/360260054/profile"
+                    style="color: black; cursor:pointer; text-decoration:underline">
+                    <p>- RecivedFunds</p>
+                </a>
+            </div>
+
+            <!-- Add more testimonials as needed -->
+        </div>
+
+
+
+        <div class="wcontainer">
+
+            <!-- <div class="icon">
+                <a href="#" onclick="loadProject('carphysics')">
+                    <img src="CarDurby/Icon.png" alt="CarPhysics">
+                    <div class="text-overlay">Car Physics</div>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="#" onclick="loadProject('animationcreator')">
+                    <img src="AnimationCreator/Icon.png" alt="AnimationCreator">
+                    <div class="text-overlay">Animation Creator</div>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="#" onclick="loadProject('theexperiment')">
+                    <img src="TheExperiment/Icon.png" alt="TheExperiment">
+                    <div class="text-overlay">The Experiment</div>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="#" onclick="loadProject('projectzomboidinspiredcamera')">
+                    <img src="ProjectZomboidInspiredCamera/Icon.png" alt="ProjectZomboidInspiredCamera">
+                    <div class="text-overlay">Project Zomboid Inspired Camera</div>
+                </a>
+            </div>
+            <div class="icon">
+                loadProject('cartmechanics')
+                <img src="CartMechanics/Icon.png" alt="CartMechanics">
+                <div class="text-overlay">Cart Mechanics</div>
+            </div>
+            <div class="icon">
+                <a href="#" onclick="loadProject('throwingmechanics')">
+                    <img src="ThrowingMechanics/Icon.png" alt="ThrowingMechanics">
+                    <div class="text-overlay">Throwing Mechanics</div>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="#" onclick="loadProject('terraingenerator')">
+                    <img src="TerrainGenerator/Icon.png" alt="TerrainGenerator">
+                    <div class="text-overlay">Terrain Generator</div>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="#" onclick="loadProject('virusinjector')">
+                    <img src="VirusInjector/Icon.png" alt="VirusInjector">
+                    <div class="text-overlay">Virus Injector</div>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="#" onclick="loadProject('camerasystem')">
+                    <img src="CameraSystem/icon.png" alt="Camera System">
+                    <div class="text-overlay">Advanced Camera System</div>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="#" onclick="loadProject('advancedNPC')">
+                    <img src="AdvancedNPC/icon.png" alt="Advanced NPC">
+                    <div class="text-overlay">Advanced NPC</div>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="#" onclick="loadProject('simplesim')">
+                    <img src="SimpleSim/Icon.png" alt="SimpleSim">
+                    <div class="text-overlay">Simple Simulator</div>
+                </a>
+            </div> -->
+            <!-- Add more icons as needed -->
+        </div>
+        <div class="container" id="projectDetails">
+            <!-- Project details will be loaded here -->
+        </div>
+        <script>
+            const projects = {
+                carphysics: {
+                    name: "Car Physics",
+                    video: "",
+                    description: "I created a physics engine for a game called Car Durby. It is meant to be a little unrealistic as the game is about epic Derby fights in cars. I made it so when you go backwards you are more powerful and if your car is flipped, you get flung easily.",
+                    gamelink: "https://www.roblox.com/games/4662389151/Car-Durby",
+                    icon: './CarDurby/Icon.png'
+                },
+                simplesim: {
+                    name: "Simple Simulator",
+                    video: "_h7-xZFT__A",
+                    description: "This shows I can create simple simulators purchases, rebirth systems, and leaderstats. Pretty simple stuff.",
+                    icon: './SimpleSim/Icon.png'
+                },
+                advancedNPC: {
+                    name: "Advanced NPC",
+                    video: "CrhDs3YvMqs",
+                    description: "This is a advanced NPC system where it is kinda stupid. The NPC tries to get you but if you hide behind stuff or jump over it, it gets confused. This NPC has goldfish memory.",
+                    icon: './AdvancedNPC/icon.png'
+                },
+                camerasystem: {
+                    name: "Advanced Camera System",
+                    video: "OIOTzPw67uw",
+                    description: "I created a advanced camera system! You can record zoom in/out and you can make it into a disc. Once it is inserted into the TV, it plays the video! I've created the camera so you can play it on a bad device and wont have lag!",
+                    icon: './CameraSystem/icon.png'
+                },
+                animationcreator: {
+                    name: "Animation Creator",
+                    video: "GmITVHVatZU",
+                    description: "I created a Animation Creator. You don't many games where you just create a animation. I even made it so you have a feature called \"onion skin\". This allows you to see 1 frame back so you can create better animations. Give it a try!",
+                    gamelink: "https://www.roblox.com/games/12858952434/Animation-Creator",
+                    icon: './AnimationCreator/Icon.png'
+                },
+                theexperiment: {
+                    name: "The Experiment",
+                    video: "6aXXMmd-_h8",
+                    description: "This is a unfinished Horror game that I created. This shows how I can create lobbies and efficiently make questions on the computer, with my code it is really easy to add questions. Give it a play!",
+                    gamelink: "https://www.roblox.com/games/15530793478/The-Experiment",
+                    icon: './TheExperiment/Icon.png'
+                },
+                projectzomboidinspiredcamera: {
+                    name: "Project Zomboid Inspired Camera",
+                    video: "Z9pzoo2Dn0k",
+                    description: "I did this camera mechanic as a commission and it shows how I can work with client side inputs and how I can use math to make the camera move according to the mouse's starting location (gets the location when they first right clicked).",
+                    gamelink: "https://www.roblox.com/games/12868083226/Funn-Pandazs-Place-Number-26",
+                    icon: './ProjectZomboidInspiredCamera/Icon.png'
+                },
+                cartmechanics: {
+                    name: "Cart Mechanics",
+                    video: "6yguX-5GwD0",
+                    description: "I created cart mechanics. I made it so that the carts will slide while not being held if you give them a push. Once you click E on the cart you are now pushing the cart. You can press E to toggle and Q to let go. When you press toggle, it does my (poorly) made animation, but makes it you can drive the cart! Letting go will push it forward.",
+                    gamelink: "https://www.roblox.com/games/14569320955/Cart-Game",
+                    icon: './CartMechanics/Icon.png'
+                },
+                throwingmechanics: {
+                    name: "Throwing Mechanics",
+                    video: "8Tlq8gi7C_0",
+                    description: "I made Bomb Throwing Mechanics, I did this for a commission, this was to show where the bomb would go if you threw it. I made it so you had to hold to gain the power to throw it where you want it to go.",
+                    gamelink: "https://www.roblox.com/games/15562591533/Throw-Bombs-at-Killer",
+                    icon: './ThrowingMechanics/Icon.png'
+                },
+                terraingenerator: {
+                    name: "Terrain Generator",
+                    video: "ln3ZLEXNHso",
+                    description: "I made a Terrain Generator game. This is to show I can use Perlin Noise to generate terrain. The Terrain only generates if you are holding the generator tool.",
+                    gamelink: "https://www.roblox.com/games/13473691299/terrain-generator",
+                    icon: './TerrainGenerator/Icon.png'
+                },
+                virusinjector: {
+                    name: "Virus Injector",
+                    video: "07lLYX6Id4M",
+                    description: "I created a Injector along with viruses. The injector holds 3 viruses, I used metatables to efficiently create injectors for each person. You fill your injector in the first room then you make a new bot and stab it with a virus to see what viruses you got! *This game is in the making*",
+                    gamelink: "https://www.roblox.com/games/16960447305/Virus-Injector-Test",
+                    icon: './VirusInjector/Icon.png'
+                }
+                // Add more projects as needed
+            };
+    
+            function loadProject() {
+                // Get the container element
+                const container = document.getElementById('projectDetails');
+    
+                // Iterate over the projects object
+                for (const projectId in projects) {
+                    const project = projects[projectId];
+    
+                    // Create project HTML structure
+                    const projectDiv = document.createElement('div');
+                    projectDiv.classList.add('project');
+    
+                    const iconDiv = document.createElement('div');
+                    iconDiv.classList.add('icon');
+                     const img = document.createElement('img');
+                     img.className.add('imageb')
+                     img.src = project.icon;
+                     img.alt = project.name;
+                    const textOverlay = document.createElement('div');
+                    textOverlay.classList.add('text-overlay');
+                    textOverlay.textContent = project.name;
+                    iconDiv.appendChild(img);
+                    iconDiv.appendChild(textOverlay);
+                    projectDiv.appendChild(iconDiv);
+    
+                    // const backButton = document.createElement('a');
+                    // backButton.href = "";
+                    // backButton.classList.add('backbutton');
+                    // backButton.textContent = "<-";
+                  //  projectDiv.appendChild(backButton);
+    
+                    if (project.name) {
+                        const titleDiv = document.createElement('div');
+                        titleDiv.classList.add('project-title');
+                        titleDiv.textContent = project.name;
+                        projectDiv.appendChild(titleDiv);
+                    }
+    
+                    if (project.video) {
+                        const iframe = document.createElement('iframe');
+                       // iframe.classList.add('video');
+                        iframe.width = "750";
+                        iframe.height = "415";
+                        iframe.src = `https://www.youtube.com/embed/${project.video}?autoplay=1&mute=1`;
+                        projectDiv.appendChild(iframe);
+                    }
+    
+                    if (project.description) {
+                        const descriptionDiv = document.createElement('div');
+                        descriptionDiv.classList.add('description');
+                        descriptionDiv.textContent = project.description;
+                        projectDiv.appendChild(descriptionDiv);
+                    }
+    
+                    if (project.gamelink) {
+                        const gameLink = document.createElement('a');
+                        gameLink.href = project.gamelink;
+                        gameLink.target = "_blank";
+                        gameLink.classList.add('button');
+                        gameLink.textContent = "Play The Game!";
+                        projectDiv.appendChild(gameLink);
+                    }
+    
+                    // Append projectDiv to the container
+                    container.appendChild(projectDiv);
+                }
+            }
+    
+            loadProject();
+        </script>
+
+
     </div>
 
-    <div class="testimonial-container">
-        <div class="testimonial" style="align-items: center;">
-            <p>"Hard worker. Willing to work many hours in a row to complete and given task. Highly reccomend."</p>
-            <a href="https://www.roblox.com/users/782578068" style="color: black; cursor:pointer; text-decoration:underline">
-                <p>- killerdolophin2000</p>
-            </a>
-        </div>
-        <div class="testimonial" style="align-items: center;">
-            <p>"HOLY I JUST TESTED THATS CRAZY GOOD WOAHHHH NICE BRO"</p>
-            <a href="https://www.roblox.com/users/360260054/profile" style="color: black; cursor:pointer; text-decoration:underline">
-                <p>- vinx</p>
-            </a>
-        </div>
-        <div class="testimonial" tyle="align-items: center;">
-            <p>"A great coder for my projects 🙏 worth the payment"</p>
-            <a href="https://www.roblox.com/users/45746331/profile"
-                style="color: black; cursor:pointer; text-decoration:underline">
-                <p>- vertexprimus</p>
-            </a>
-        </div>
-        <div class="testimonial" style="align-items: center;">
-            <p>"you've been good to work with and have been really talented🙏"</p>
-            <a href="https://www.roblox.com/users/360260054/profile" style="color: black; cursor:pointer; text-decoration:underline">
-                <p>- vinx</p>
-            </a>
-        </div>
-        <!-- Add more testimonials as needed -->
-    </div>
+    <footer>
+        <p style="color: aliceblue; text-align: center;">Made by PandazDev</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

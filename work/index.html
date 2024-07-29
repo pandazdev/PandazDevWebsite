@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="../icon">
+    <link rel="icon" href="../icon.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PandazDev Portfolio</title>
-    <style>
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- <style>
         /* Add your CSS styles here */
         body {
             font-family: sans-serif, fira-mono;
@@ -141,7 +143,7 @@
             color: #00d9ff;
             font-weight: bolder;
            }
-    </style>
+    </style> -->
 </head>
 <body>
     <header>
@@ -153,7 +155,7 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="wcontainer">
         
         <div class="icon">
             <a href="#" onclick="loadProject('carphysics')">
@@ -223,7 +225,8 @@
         </div>
         <!-- Add more icons as needed -->
     </div>
-    <div class="container" id="projectDetails">
+   
+    <div class="wcontainer" id="projectDetails">
         <!-- Project details will be loaded here -->
     </div>
     <script>
@@ -234,64 +237,76 @@
                     name: "Car Physics",
                     video: "",
                     description: "I created a physics engine for a game called Car Durby. It is meant to be a little unrealistic as the game is about epic Derby fights in cars. I made it so when you go backwards you are more powerful and if your car is flipped, you get flung easily.",
-                    gamelink: "https://www.roblox.com/games/4662389151/Car-Durby"
+                    gamelink: "https://www.roblox.com/games/4662389151/Car-Durby",
+                    icon: "../CarDurby/Icon.png"
                 },
                 simplesim : {
                     name: "Simple Simulator",
                     video: "_h7-xZFT__A",
-                    description: "This shows I can create simple simulators purchases, rebirth systems, and leaderstats. Pretty simple stuff."
+                    description: "This shows I can create simple simulators purchases, rebirth systems, and leaderstats. Pretty simple stuff.",
+                    icon: "../SimpleSim/Icon.png"
                 },
                 advancedNPC: {
                     name: "Advanced NPC",
                     video : "CrhDs3YvMqs",
-                    description: "This is a advanced NPC system where it is kinda stupid. The NPC tries to get you but if you hide behind stuff or jump over it, it gets confused. This NPC has goldfish memory."
-                },
+                    description: "This is a advanced NPC system where it is kinda stupid. The NPC tries to get you but if you hide behind stuff or jump over it, it gets confused. This NPC has goldfish memory.",
+                    icon: "../AdvancedNPC/icon.png"
+            },
                 camerasystem: {
                     name: "Advanced Camera System",
                     video: "OIOTzPw67uw",
                     description: "I created a advanced camera system! You can record zoom in/out and you can make it into a disc. Once it is inserted into the TV, it plays the video! I've created the camera so you can play it on a bad device and wont have lag!"
+                ,
+                    icon: "../CameraSystem/icon.png"
                 },
                 animationcreator: {
                     name: "Animation Creator",
                     video: "GmITVHVatZU", 
                     description: "I created a Animation Creator. You don't many games where you just create a animation. I even made it so you have a feature called \"onion skin\". This allows you to see 1 frame back so you can create better animations. Give it a try!",
                     gamelink: "https://www.roblox.com/games/12858952434/Animation-Creator",
+                    icon: "../AnimationCreator/Icon.png"
                 },
                 theexperiment:{
                     name: "The Experiment",
                     video: "6aXXMmd-_h8",
                     description: "This is a unfinished Horror game that I created. This shows how I can create lobbies and efficiently make questions on the computer, with my code it is really easy to add questions. Give it a play!",
-                    gamelink: "https://www.roblox.com/games/15530793478/The-Experiment"
+                    gamelink: "https://www.roblox.com/games/15530793478/The-Experiment",
+                    icon: "../TheExperiment/Icon.png"
                 },
                 projectzomboidinspiredcamera:{
                     name: "Project Zomboid Inspired Camera",
                     video: "Z9pzoo2Dn0k",
                     description: "I did this camera mechanic as a commission and it shows how I can work with client side inputs and how I can use math to make the camera move according to the mouse's starting location (gets the location when they first right clicked).",
-                    gamelink: "https://www.roblox.com/games/12868083226/Funn-Pandazs-Place-Number-26"
+                    gamelink: "https://www.roblox.com/games/12868083226/Funn-Pandazs-Place-Number-26",
+                    icon: "../ProjectZomboidInspiredCamera/Icon.png"
                 },
                 cartmechanics:{
                     name: "Cart Mechanics",
                     video: "6yguX-5GwD0",
                     description: "I created cart mechanics. I made it so that the carts will slide while not being held if you give them a push. Once you click E on the cart you are now pushing the cart. You can press E to toggle and Q to let go. When you press toggle, it does my (poorly) made animation, but makes it you can drive the cart! Letting go will push it forward.",
-                    gamelink: "https://www.roblox.com/games/14569320955/Cart-Game"
+                    gamelink: "https://www.roblox.com/games/14569320955/Cart-Game",
+                    icon: "../CartMechanics/Icon.png"
                 },
                 throwingmechanics:{
                     name: "Throwing Mechanics",
                     video: "8Tlq8gi7C_0",
                     description: "I made Bomb Throwing Mechanics, I did this for a commission, this was to show where the bomb would go if you threw it. I made it so you had to hold to gain the power to throw it where you want it to go. ",
-                    gamelink: "https://www.roblox.com/games/15562591533/Throw-Bombs-at-Killer"
+                    gamelink: "https://www.roblox.com/games/15562591533/Throw-Bombs-at-Killer",
+                    icon: "../ThrowingMechanics/Icon.png"
                 },
                 terraingenerator:{
                     name: "Terrain Generator",
                     video: "ln3ZLEXNHso",
                     description: "I made a Terrain Generator game. This is to show I can use Perlin Noise to generate terrain. The Terrain only generates if you are holding the generator tool.",
-                    gamelink: "https://www.roblox.com/games/13473691299/terrain-generator"
+                    gamelink: "https://www.roblox.com/games/13473691299/terrain-generator",
+                    icon: "../TerrainGenerator/Icon.png"
                 },
                 virusinjector:{
                     name: "Virus Injector",
                     video: "07lLYX6Id4M",
                     description: "I created a Injector along with viruses. The injector holds 3 viruses, I used metatables to efficently create injectors for each person. You fill your injector in the first room then you make a new bot and stab it with a virus to see what viruses you got! *This game is in the making*",
-                    gamelink: "https://www.roblox.com/games/16960447305/Virus-Injector-Test"
+                    gamelink: "https://www.roblox.com/games/16960447305/Virus-Injector-Test",
+                    icon: "../VirusInjector/Icon.png"
                 // Add more projects as needed
                 }
             };
@@ -303,27 +318,33 @@
             const project = projects[projectId];
 
             // Generate HTML for the project
-            const html = `
-                <a href="" class="backbutton" >\<\-</a>
-                <div class="project">
-                    <div class="project-title">${project.name}</div>
-               
-                    <iframe class="iframe" width="750" height="415"
-                    src="https://www.youtube.com/embed/${project.video}?autoplay=1&mute=1">
-                    </iframe>
-
-                    <div class="description">${project.description}</div>
-                    <a href="${project.gamelink}" target="_blank" class="button">Play The Game!</a>
-                </div>
-            `;
-            
-             document.getElementsByClassName('container')[0].remove();
-             container.innerHTML = html; // Set the HTML of the container
-             console.log(project.video)
-             if (project.video === "") {
+            //<a href="" class="backbutton" >\<\-</a>
+            var html = `
                 
-                document.getElementsByClassName('iframe')[0].remove();
+                <div class="project"> `;
+            
+            if (project.name != "") {
+                html = html + `<div class="project-title">${project.name}</div>`
             }
+
+            if (project.video != "") {
+                html = html + `<iframe class="iframe" width="750" height="415" src="https://www.youtube.com/embed/${project.video}?autoplay=1&mute=1"> </iframe>`
+            }
+            
+            if (project.description != "") {
+                html = html + `<div class="description">${project.description}</div>`
+            }
+
+            if (project.gamelink != "") {
+                html = html + `<a href="${project.gamelink}" target="_blank" class="button">Play The Game!</a>`
+            }
+
+            html = html + '</div>'
+            
+console.log(html)
+
+             document.getElementsByClassName('wcontainer')[0].remove();
+             container.innerHTML = html; // Set the HTML of the container
         }
     </script>
 

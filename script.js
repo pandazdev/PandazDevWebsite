@@ -61,3 +61,5 @@ function prevTestimonial() {
 function openImage(imageName) {
     window.open(imageName, '_blank');
 }
+
+
