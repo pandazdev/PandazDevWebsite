@@ -53,6 +53,14 @@ nav a:hover {
     color: #555;
 }
 
+.border {
+    text-align: center;
+    margin-bottom: 4%;
+    color: #555;
+    font-size: 1000%;
+    text-wrap:nowrap;
+}
+
 p {
     font-size: 1.2em;
     line-height: 1.6;
@@ -72,7 +80,6 @@ p {
 
 .testimonial-container {
     padding-top: 100px;
-    padding-bottom: 100px;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
@@ -179,28 +186,22 @@ video {
 
 .description {
     color: #fff;
-    font-size: x-large;
+    font-size: 250%;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 .icon .text-overlay {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
     font-size: 500%;
     text-align: center;
     padding: 50px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.342);
     border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.3s;
 }
-.icon:hover .text-overlay {
-    opacity: 1;
-} 
-
 
 .backbutton {
     font-family: 'Fira Mono', monospace;

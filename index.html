@@ -257,11 +257,15 @@
                     // Create project HTML structure
                     const projectDiv = document.createElement('div');
                     projectDiv.classList.add('project');
-    
+     const titleDiv = document.createElement('div');
+                        titleDiv.classList.add('border');
+                        titleDiv.textContent = "-----------------------";
+                        projectDiv.appendChild(titleDiv);
+
                     const iconDiv = document.createElement('div');
                     iconDiv.classList.add('icon');
                      const img = document.createElement('img');
-                     img.className.add('imageb')
+                     //img.className.add('imageb')
                      img.src = project.icon;
                      img.alt = project.name;
                     const textOverlay = document.createElement('div');
@@ -277,18 +281,18 @@
                     // backButton.textContent = "<-";
                   //  projectDiv.appendChild(backButton);
     
-                    if (project.name) {
-                        const titleDiv = document.createElement('div');
-                        titleDiv.classList.add('project-title');
-                        titleDiv.textContent = project.name;
-                        projectDiv.appendChild(titleDiv);
-                    }
+                    // if (project.name) {
+                    //     const titleDiv = document.createElement('div');
+                    //     titleDiv.classList.add('project-title');
+                    //     titleDiv.textContent = project.name;
+                    //     projectDiv.appendChild(titleDiv);
+                    // }
     
                     if (project.video) {
                         const iframe = document.createElement('iframe');
                        // iframe.classList.add('video');
-                        iframe.width = "750";
-                        iframe.height = "415";
+                        iframe.width = "1000";
+                        iframe.height = "600";
                         iframe.src = `https://www.youtube.com/embed/${project.video}?autoplay=1&mute=1`;
                         projectDiv.appendChild(iframe);
                     }
@@ -310,6 +314,8 @@
                     }
     
                     // Append projectDiv to the container
+                   
+
                     container.appendChild(projectDiv);
                 }
             }
