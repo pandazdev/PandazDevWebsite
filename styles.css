@@ -176,12 +176,6 @@ video {
     border-radius: 10px;
 }
 
-imageb {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
 
 .description {
     color: #fff;
@@ -206,10 +200,7 @@ imageb {
 .icon:hover .text-overlay {
     opacity: 1;
 } 
-.icon:hover .imageb{
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-}
+
 
 .backbutton {
     font-family: 'Fira Mono', monospace;
