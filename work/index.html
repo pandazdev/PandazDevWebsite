@@ -156,7 +156,12 @@
     </header>
 
     <div class="wcontainer">
-        
+        <div class="icon">
+            <a href="#" onclick="loadProject('carai')">
+                <img src="../CarAI/Icon.png" alt="CarAI">
+                <div class="text-overlay">Advanced Car AI</div>
+            </a>
+        </div>
         <div class="icon">
             <a href="#" onclick="loadProject('carphysics')">
                 <img src="../CarDurby/Icon.png" alt="CarPhysics">
@@ -233,6 +238,13 @@
         function loadProject(projectId) {
             // Define your projects in an object
             const projects = {
+                carai:{
+                    name: "Car AI",
+                    video: "xSiVqU5KrHU",
+                    description: "I created an AI inside roblox, it's progress is being streamed on https://www.twitch.tv/pandazdev! \n Press the button to go to the live stream!",
+                    gamelink: "https://www.twitch.tv/pandazdev",
+                    icon: "../CarAI/Icon.png"
+                },
                 carphysics: {
                     name: "Car Physics",
                     video: "",
@@ -240,18 +252,13 @@
                     gamelink: "https://www.roblox.com/games/4662389151/Car-Durby",
                     icon: "../CarDurby/Icon.png"
                 },
-                simplesim : {
-                    name: "Simple Simulator",
-                    video: "_h7-xZFT__A",
-                    description: "This shows I can create simple simulators purchases, rebirth systems, and leaderstats. Pretty simple stuff.",
-                    icon: "../SimpleSim/Icon.png"
-                },
+                
                 advancedNPC: {
                     name: "Advanced NPC",
                     video : "CrhDs3YvMqs",
                     description: "This is a advanced NPC system where it is kinda stupid. The NPC tries to get you but if you hide behind stuff or jump over it, it gets confused. This NPC has goldfish memory.",
                     icon: "../AdvancedNPC/icon.png"
-            },
+                 },
                 camerasystem: {
                     name: "Advanced Camera System",
                     video: "OIOTzPw67uw",
@@ -272,13 +279,6 @@
                     description: "This is a unfinished Horror game that I created. This shows how I can create lobbies and efficiently make questions on the computer, with my code it is really easy to add questions. Give it a play!",
                     gamelink: "https://www.roblox.com/games/15530793478/The-Experiment",
                     icon: "../TheExperiment/Icon.png"
-                },
-                projectzomboidinspiredcamera:{
-                    name: "Project Zomboid Inspired Camera",
-                    video: "Z9pzoo2Dn0k",
-                    description: "I did this camera mechanic as a commission and it shows how I can work with client side inputs and how I can use math to make the camera move according to the mouse's starting location (gets the location when they first right clicked).",
-                    gamelink: "https://www.roblox.com/games/12868083226/Funn-Pandazs-Place-Number-26",
-                    icon: "../ProjectZomboidInspiredCamera/Icon.png"
                 },
                 cartmechanics:{
                     name: "Cart Mechanics",
@@ -308,7 +308,20 @@
                     gamelink: "https://www.roblox.com/games/16960447305/Virus-Injector-Test",
                     icon: "../VirusInjector/Icon.png"
                 // Add more projects as needed
-                }
+                },
+                simplesim : {
+                    name: "Simple Simulator",
+                    video: "_h7-xZFT__A",
+                    description: "This shows I can create simple simulators purchases, rebirth systems, and leaderstats. Pretty simple stuff.",
+                    icon: "../SimpleSim/Icon.png"
+                },
+                projectzomboidinspiredcamera:{
+                    name: "Project Zomboid Inspired Camera",
+                    video: "Z9pzoo2Dn0k",
+                    description: "I did this camera mechanic as a commission and it shows how I can work with client side inputs and how I can use math to make the camera move according to the mouse's starting location (gets the location when they first right clicked).",
+                    gamelink: "https://www.roblox.com/games/12868083226/Funn-Pandazs-Place-Number-26",
+                    icon: "../ProjectZomboidInspiredCamera/Icon.png"
+                },
             };
 
             // Get the container element
