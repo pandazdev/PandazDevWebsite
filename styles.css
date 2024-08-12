@@ -209,7 +209,7 @@ video {
     font-weight:bold;
     text-decoration: none;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #ffffff00;
     -webkit-text-stroke-width: 5px;
     -webkit-text-stroke-color: rgb(0, 0, 0);
     cursor:pointer;
