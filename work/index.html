@@ -157,6 +157,18 @@
 
     <div class="wcontainer">
         <div class="icon">
+            <a href="#" onclick="loadProject('labline')">
+                <img src="../labline/Icon.png" alt="LabLine">
+                <div class="text-overlay">Lab Line</div>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="#" onclick="loadProject('connections')">
+                <img src="../Connections/Icon.png" alt="Connections">
+                <div class="text-overlay">Connections</div>
+            </a>
+        </div>
+        <div class="icon">
             <a href="#" onclick="loadProject('carai')">
                 <img src="../CarAI/Icon.png" alt="CarAI">
                 <div class="text-overlay">Advanced Car AI</div>
@@ -166,12 +178,6 @@
             <a href="#" onclick="loadProject('carphysics')">
                 <img src="../CarDurby/Icon.png" alt="CarPhysics">
                 <div class="text-overlay">Car Physics</div>
-            </a>
-        </div>
-        <div class="icon">
-            <a href="#" onclick="loadProject('labline')">
-                <img src="../labline/Icon.png" alt="LabLine">
-                <div class="text-overlay">Lab Line</div>
             </a>
         </div>
         <div class="icon">
@@ -244,6 +250,13 @@
         function loadProject(projectId) {
             // Define your projects in an object
             const projects = {
+                connections:{
+                    name: "Connections",
+                    video: "",
+                    description: "I created an game inside roblox, it is about your 'Connections'. It is very well made and I would reccomend checking it out.",
+                    gamelink: "https://www.roblox.com/games/134896243769950/CONNECTIONS-ALPHA",
+                    icon: "../Connections/Icon.png"
+                },
                 carai:{
                     name: "Car AI",
                     video: "xSiVqU5KrHU",
