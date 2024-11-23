@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#game-name {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow stats to wrap to the next line */
+  justify-content: center; /* Center the stats */
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  gap: 20px; /* Space between stats */
+}
+
+.stat {
+  display: flex;
+  flex-direction: column; /* Stack text and value vertically */
+  align-items: center;
+  font-weight: bold;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  width: 250px; /* Set a fixed width */
+  min-width: 150px;
+  color: #f1c40f;
+}
+
+.stat-text {
+  font-size: 20px; /* Smaller font for the text */
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 80px; /* Larger font for the value */
+}
+
+#last-updated {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+#api-error {
+  background-color: #e74c3c;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .stat {
+    font-size: 50px;
+    width: 200px; /* Reduce width for smaller screens */
+  }
+
+  .stats-container {
+    flex-direction: column;
+  }
+
+  .stat-text {
+    font-size: 16px; /* Smaller text for mobile screens */
+  }
+
+  .stat-value {
+    font-size: 60px; /* Smaller value for mobile screens */
+  }
+}
