@@ -34,18 +34,23 @@ body {
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  width: 250px; /* Set a fixed width */
+  width: 550px; /* Set a fixed width */
+  height: 250px;
   min-width: 150px;
-  color: #f1c40f;
+  color: #ffffff;
 }
 
 .stat-text {
+  padding-top: 0px;
   font-size: 20px; /* Smaller font for the text */
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  
 }
 
 .stat-value {
-  font-size: 80px; /* Larger font for the value */
+  padding-top: 30px;
+  font-size: 150px; /* Larger font for the value */
+  color: #49d412;
 }
 
 #last-updated {

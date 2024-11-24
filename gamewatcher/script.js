@@ -1,6 +1,6 @@
 const apiUrl = "https://games.roproxy.com/v1/games?universeIds=6585982530"; // Updated to roproxy.com
-const votesApiUrl = "https://games.roproxy.com/v1/games/votes?universeIds=6585982530"; // API for votes
-const refreshInterval = 30000; // 1 second
+const VotesAPIurl = "https://games.roproxy.com/v1/games/votes?universeIds=6585982530"
+const refreshInterval = 15000; // 1 second
 
 const gameNameElement = document.getElementById("game-name");
 const concurrentUsersElement = document.getElementById("concurrent-users");
@@ -10,83 +10,57 @@ const lastUpdatedElement = document.getElementById("last-updated");
 const upvotesElement = document.getElementById("upvotes");
 const downvotesElement = document.getElementById("downvotes");
 const upvotePercentageElement = document.getElementById("upvote-percentage");
-const apiErrorElement = document.getElementById("api-error"); // For showing API error messages
 
-let currentStats = { concurrentUsers: 0, totalVisits: 0, favoritedCount: 0, gameName: "", lastUpdated: 0, upvotes: 0, downvotes: 0 };
+let currentStats = { concurrentUsers: 0, totalVisits: 0, favoritedCount: 0, gameName: "", lastUpdated: 0, likes: 0, dislikes: 0, ratio: 0 };
 
 async function fetchStats() {
   try {
-    // Fetch game stats (concurrent users, visits, favorited count, game name, last updated)
     const response = await fetch(apiUrl);
     const data = await response.json();
 
-    // Check if the response contains "Blocked"
-    if (data && data.message && data.message.includes("Blocked")) {
-      displayApiError("Stats API blocked us temporarily. Please try again later.");
-      return;
-    }
-
+    // Extracting stats from the API response
     const gameData = data.data[0];
     const newStats = {
       concurrentUsers: gameData.playing || 0,
       totalVisits: gameData.visits || 0,
       favoritedCount: gameData.favoritedCount || 0,
       gameName: gameData.name || "Unknown Game",
-      lastUpdated: new Date(gameData.updated).getTime(), // Convert the "updated" timestamp to a timestamp (milliseconds)
+      lastUpdated: new Date(gameData.updated) // Store the time of this update
     };
 
-    // Fetch upvotes and downvotes
-    const votesResponse = await fetch(votesApiUrl);
-    const votesData = await votesResponse.json();
+    // const votesResponse = await fetch(VotesAPIurl);
+    // const votesData = await votesResponse.json();
+    // const votes = votesData.data[0];
 
-    if (votesData.message && votesData.message.includes("Blocked")) {
-      displayApiError("Votes API blocked us temporarily. Please try again later.");
-      return;
-    }
+    // newStats.likes = votes.upVotes || 0;
+    // newStats.dislikes = votes.downVotes || 0;
 
-    const votes = votesData.data[0];
-    newStats.upvotes = votes.upVotes || 0;
-    newStats.downvotes = votes.downVotes || 0;
+    // const totalVotes = newStats.likes + newStats.dislikes;
+    // newStats.ratio = totalVotes > 0 ? (newStats.likes / totalVotes) * 100 : 0;
+    // updateCounter(upvotesElement, currentStats.likes, newStats.likes)
+    // updateCounter(downvotesElement, currentStats.dislikes, newStats.dislikes, "")
 
-    // Calculate upvote percentage
-    const totalVotes = newStats.upvotes + newStats.downvotes;
-    newStats.upvotePercentage = totalVotes > 0 ? (newStats.upvotes / totalVotes) * 100 : 0;
+    // updateCounter(upvotePercentageElement, currentStats.ratio, newStats.ratio, "%")
+
 
     // Update the game name and counters
-    gameNameElement.textContent = newStats.gameName;
-    updateCounter(concurrentUsersElement, currentStats.concurrentUsers, newStats.concurrentUsers);
-    updateCounter(totalVisitsElement, currentStats.totalVisits, newStats.totalVisits);
-    updateCounter(favoritedCountElement, currentStats.favoritedCount, newStats.favoritedCount);
+    gameNameElement.textContent = newStats.gameName; // Set the game name
+    updateCounter(concurrentUsersElement, currentStats.concurrentUsers, newStats.concurrentUsers, "");
+    updateCounter(totalVisitsElement, currentStats.totalVisits, newStats.totalVisits, "");
+    updateCounter(favoritedCountElement, currentStats.favoritedCount, newStats.favoritedCount, "");
 
-    // Update the upvotes, downvotes, and upvote percentage
-    upvotesElement.textContent = newStats.upvotes;
-    downvotesElement.textContent = newStats.downvotes;
-    upvotePercentageElement.textContent = `${newStats.upvotePercentage.toFixed(2)}%`;
-
+ 
     // Update the last updated time
     updateLastUpdated(newStats.lastUpdated);
 
     // Save current stats
     currentStats = newStats;
-
-    // Clear any previous error message
-    clearApiError();
   } catch (error) {
     console.error("Error fetching stats:", error);
-    displayApiError("Error fetching stats. Please try again later.");
   }
 }
 
-function displayApiError(message) {
-  apiErrorElement.textContent = message;
-  apiErrorElement.style.display = "block";
-}
-
-function clearApiError() {
-  apiErrorElement.style.display = "none";
-}
-
-function updateCounter(element, oldValue, newValue) {
+function updateCounter(element, oldValue, newValue, add) {
   if (oldValue === newValue) {
     return;
   }
@@ -115,7 +89,7 @@ function updateCounter(element, oldValue, newValue) {
       if (currentValue < newValue) currentValue = newValue; // Prevent overshooting
     }
 
-    element.textContent = Math.round(currentValue);
+    element.textContent = `${Math.round(currentValue)}${add}`;
 
     if (currentValue === newValue) {
       clearInterval(interval);
@@ -136,22 +110,19 @@ function updateLastUpdated(lastUpdated) {
   let timeAgo = "";
 
   if (seconds < 60) {
-    timeAgo = `${seconds} second${seconds !== 1 ? "s" : ""} ago`;
+    timeAgo = `${seconds} seconds ago`;
   } else if (minutes < 60) {
-    timeAgo = `${minutes} minute${minutes !== 1 ? "s" : ""} ago`;
+    timeAgo = `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
   } else if (hours < 24) {
-    timeAgo = `${hours} hour${hours !== 1 ? "s" : ""} ago`;
+    timeAgo = `${hours} hour${hours > 1 ? "s" : ""} ago`;
   } else if (days < 365) {
-    timeAgo = `${days} day${days !== 1 ? "s" : ""} ago`;
+    timeAgo = `${days} day${days > 1 ? "s" : ""} ago`;
   } else {
-    timeAgo = `${years} year${years !== 1 ? "s" : ""} ago`;
+    timeAgo = `${years} year${years > 1 ? "s" : ""} ago`;
   }
 
-  lastUpdatedElement.textContent = `${timeAgo}`;
+  lastUpdatedElement.textContent = `Last Updated: ${timeAgo}`;
 }
 
-// Fetch stats every second
 setInterval(fetchStats, refreshInterval);
-
-// Initial fetch
-fetchStats();
+fetchStats(); // Initial fetch
