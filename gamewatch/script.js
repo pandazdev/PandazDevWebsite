@@ -1,6 +1,6 @@
 const apiUrl = "https://games.roproxy.com/v1/games?universeIds=6585982530"; // Updated to roproxy.com
 const VotesAPIurl = "https://games.roproxy.com/v1/games/votes?universeIds=6585982530"
-const refreshInterval = 15000; // 1 second
+const refreshInterval = 5000; // 1 second
 
 const gameNameElement = document.getElementById("game-name");
 const concurrentUsersElement = document.getElementById("concurrent-users");
