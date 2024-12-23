@@ -7,6 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PandazDev Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .panel {
+            display: flex; /* Makes the items align left-to-right */
+            justify-content: center; /* Centers items horizontally */
+            align-items: center; /* Centers items vertically */
+            gap: 20px; /* Adds spacing between items */
+        }
+    
+        .panel h2, .panel p {
+            margin: 0; /* Removes unnecessary margins */
+            text-align: center; /* Ensures text is centered */
+        }
+    
+    </style>
 </head>
 
 <body style="background-color: #979797; size: 0%;">
@@ -38,6 +52,109 @@
                 })
                 .catch(error => console.error('Error fetching profile picture:', error));
         </script>
+
+<div class="panel">
+    <div>
+        <div style="font-size: x-large; font-weight: 600;">Active</div>
+        <p style="font-size: medium; font-weight: 900; color: rgb(0, 255, 0);" id="total-active-players">...</p>
+    </div>
+    <div>
+        <div style="font-size: x-large; font-weight: 600;">Visits</div>
+        <p style="font-size: medium; font-weight: 900; color: rgb(0, 255, 0);" id="total-visits">...</p>
+    </div>
+</div>
+
+
+
+<script>
+function formatNumber(num) {
+  if (num >= 1e9) {
+    return (num / 1e9).toFixed(1) + 'B'; // Billions
+  } else if (num >= 1e6) {
+    return (num / 1e6).toFixed(1) + 'M'; // Millions
+  } else if (num >= 1e3) {
+    return (num / 1e3).toFixed(1) + 'k'; // Thousands
+  } else {
+    return num.toString(); // No change for numbers less than 1,000
+  }
+}
+
+
+    
+
+ async function fetchUserGroups() {
+    const url = `https://groups.roproxy.com/v2/users/1933939860/groups/roles`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.data.map(group => ({
+        id: group.group.id,
+        role: group.role.name,
+        rank: group.role.rank,
+    }));
+}
+
+async function fetchGroupGames(groupId) {
+    const url = `https://games.roproxy.com/v2/groups/${groupId}/games?accessFilter=2&limit=10&sortOrder=Asc`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.data.map(game => ({
+        id: game.id,
+        name: game.name,
+        rootPlaceId: game.rootPlace.id,
+    }));
+}
+
+async function fetchGameDetails(placeId) {
+    const url = `https://www.roproxy.com/places/api-get-details?assetId=${placeId}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return {
+            activePlayers: data.OnlineCount || 0,
+            visits: data.VisitedCount || 0,
+        };
+    } catch (error) {
+        console.error(`Error fetching details for placeId ${placeId}:`, error);
+        return { activePlayers: 0, visits: 0 };
+    }
+}
+
+async function main() {
+    try {
+        const userGroups = await fetchUserGroups();
+        
+        // Find groups where rank is greater than 1
+        const validGroups = userGroups.filter(group => group.rank > 1);
+        
+        if (validGroups.length > 0) {
+            let totalActivePlayers = 0;
+            let totalVisits = 0;
+
+            // Iterate through valid groups and fetch their games
+            for (const group of validGroups) {
+                const groupGames = await fetchGroupGames(group.id);
+
+                for (const game of groupGames) {
+                    const { activePlayers, visits } = await fetchGameDetails(game.rootPlaceId);
+                    console.log(`Game: ${game.name} - Active Players: ${activePlayers}, Visits: ${visits}`);
+                    totalActivePlayers += activePlayers;
+                    totalVisits += visits;
+                }
+            }
+
+            document.getElementById('total-active-players').textContent = formatNumber(totalActivePlayers);
+            document.getElementById('total-visits').textContent = formatNumber(totalVisits);
+        } else {
+            console.log("User is not in a group with rank greater than 1.");
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+main();
+
+</script>
 
         <p style="font-size:xx-large; text-align: center; font-weight: 500; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">I'm a dedicated Roblox Developer with a
             passion for scripting and game development. What started as a hobby in 2020 quickly evolved into a serious
@@ -343,6 +460,7 @@
     
             loadProject();
         </script>
+
 
 
     </div>
